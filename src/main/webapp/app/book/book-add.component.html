@@ -1,0 +1,21 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@book.add.headline">Add Book</h1>
+    <div>
+        <a routerLink="/books" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@book.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="title" i18n-label="@@book.title.label" label="Title" />
+    <app-input-row [group]="addForm" field="isbn" i18n-label="@@book.isbn.label" label="Isbn" />
+    <app-input-row [group]="addForm" field="genre" rowType="textarea" i18n-label="@@book.genre.label" label="Genre" />
+    <app-input-row [group]="addForm" field="author" i18n-label="@@book.author.label" label="Author" />
+    <app-input-row [group]="addForm" field="publicationYear" i18n-label="@@book.publicationYear.label" label="Publication Year" />
+    <app-input-row [group]="addForm" field="condition" i18n-label="@@book.condition.label" label="Condition" />
+    <app-input-row [group]="addForm" field="price" i18n-label="@@book.price.label" label="Price" />
+    <app-input-row [group]="addForm" field="description" i18n-label="@@book.description.label" label="Description" />
+    <app-input-row [group]="addForm" field="coverImage" i18n-label="@@book.coverImage.label" label="Cover Image" />
+    <app-input-row [group]="addForm" field="quantity" rowType="number" i18n-label="@@book.quantity.label" label="Quantity" />
+    <app-input-row [group]="addForm" field="sellerId" rowType="number" i18n-label="@@book.sellerId.label" label="Seller Id" />
+    <app-input-row [group]="addForm" field="user" rowType="select" [options]="userValues" i18n-label="@@book.user.label" label="User" />
+    <input type="submit" i18n-value="@@book.add.headline" value="Add Book" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>
